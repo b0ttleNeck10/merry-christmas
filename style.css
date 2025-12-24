@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mountains+of+Christmas:wght@400;700&family=Style+Script&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: sans-serif;
+    background-color: pink;
+}
+
+.letter {
+    position: relative;
+    width: 350px;
+    height: 500px;
+    transition: transform 0.5s;
+}
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+
+.front,
+.back {
+    background-color: #660033;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 1px solid pink;
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-content {
+    transform: rotateY(180deg);
+}
+
+/* Paper flipped */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* Button CSS */
+button {
+    border: none;
+    background-color: transparent;
+    transition: transform 0.5s;
+}
+
+#prev-btn {
+    margin-right: 10px;
+}
+
+#next-btn {
+    margin-left: 10px;
+}
+
+button img:hover {
+    transition: transform 0.5 ease-in;
+    transform: scale(1.1);
+}
+
+/* Paper order */
+#page1 {
+    z-index: 2;
+}
+
+#page2 {
+    z-index: 1;
+}
+
+
+/* Card */
+.card img {
+    height: 200px;
+}
+
+.card {
+    height: auto;
+    width: auto;
+    top: 80px;
+    left: 30%;
+    position: absolute;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+.card:nth-child(1) {
+    z-index: 1;
+}
+
+.card:nth-child(2) {
+    z-index: 2;
+}
+
+.card:nth-child(3) {
+    z-index: 3;
+}
+
+.card-stack:hover .card:nth-child(1) {
+    transform: rotate(-15deg) translateX(-60px);
+}
+
+.card-stack:hover .card:nth-child(2) {
+    transform: rotate(0deg) translateX(0);
+}
+
+.card-stack:hover .card:nth-child(3) {
+    transform: rotate(15deg) translateX(60px);
+}
+
+
+/* Content */
+.mc {
+    margin-top: 220px;
+    font-family: "Mountains of Christmas", serif;
+    font-weight: 700;
+    color: gold;
+}
+
+.message {
+    margin: 20px;
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-size: 1.1em;
+}
+
+.best-message {
+    color: gold;
+}
+
+.back-content .message {
+    text-align: center;
+}
+
+#b2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.light {
+    width: 150px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.bebe-img {
+    width: 150px;
+    border: .5px solid rgb(182, 180, 180);
+}
+
+#bebe1 {
+    position: absolute;
+    top: 55px;
+    left: 52px;
+    z-index: 1;
+    transform: rotate(-12deg);
+}
+
+#bebe2 {
+    top: 140px;
+    right: 40px;
+    position: absolute;
+    z-index: 2;
+    transform: rotate(15deg);
+}
+
+#bebe3 {
+    bottom: 48px;
+    left: 55px;
+    position: absolute;
+    z-index: 3;
+    transform: rotate(-5deg);
+}
+
